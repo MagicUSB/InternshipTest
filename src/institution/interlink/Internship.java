@@ -11,10 +11,6 @@ public class Internship {
 
     private String name;
 
-    public void setUniversity(University university) {
-        this.university = university;
-    }
-
     public String getName() {
         return name;
     }
@@ -23,24 +19,19 @@ public class Internship {
         this.name = name;
     }
 
-    private University university;
-
     public Internship(String name) {
         this.name = name;
     }
 
-    public void setStudent(Student student) {
-        //TODO: Implementation is needed
-    }
-
-    public String getStudents() {
+    public String getStudents(University university) {
         if (university != null) {
             int averageKnowledgeLevel = university.getStudentList()
                     .stream()
                     .reduce(0, (subtotal, element) -> subtotal + element.getKnowledge()
                                     .getKnowledgeLevel(),
                             Integer::sum)
-                    / university.getStudentList().size();
+                    / university.getStudentList()
+                    .size();
             List<Student> studentList = university.getStudentList()
                     .stream()
                     .filter(x -> x.getKnowledge()

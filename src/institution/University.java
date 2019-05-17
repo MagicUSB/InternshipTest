@@ -7,6 +7,10 @@ import java.util.List;
 
 public class University {
 
+    public String getName() {
+        return name;
+    }
+
     private String name;
     private List<Student> studentList;
 
@@ -15,15 +19,15 @@ public class University {
         studentList = new ArrayList<>();
     }
 
-    public void setStudent(Student student) {
-        //TODO: Implementation is needed
-    }
-
     public void addStudent(Student student) {
         studentList.add(student);
     }
 
     public List<Student> getStudentList() {
         return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
     }
 }
