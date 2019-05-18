@@ -24,7 +24,8 @@ public class Internship {
     }
 
     public String getStudents(University university) {
-        if (university != null) {
+        if (university != null && university.getStudentList()
+                .size() > 0) {
             int averageKnowledgeLevel = university.getStudentList()
                     .stream()
                     .reduce(0, (subtotal, element) -> subtotal + element.getKnowledge()
